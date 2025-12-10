@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { ShopConstext } from '../context/ShopContext';
-import Title from './title';
+import Title from './Title';
 import { Link } from 'react-router-dom';
 
 const LatestColection = () => {

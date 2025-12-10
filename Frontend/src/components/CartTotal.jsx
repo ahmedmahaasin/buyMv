@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from "react";
 import { ShopConstext } from "../context/ShopContext";
-import Title from "./title";
+import Title from "./Title";
 
 const CartTotal = ({ methodName }) => {
   const { currency, getCartAmount, delivery_methods } = useContext(ShopConstext);

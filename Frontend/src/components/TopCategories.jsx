@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopConstext } from "../context/ShopContext";
-import Title from "./title"; // Using your existing animated Title component
+import Title from "./Title"; // Using your existing animated Title component
 import { Link } from "react-router-dom";
 
 // Animated Section Component
