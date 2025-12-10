@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ShopConstext } from '../context/ShopContext';
-import Title from '../components/title';
+import Title from '../components/Title';
 import axios from 'axios';
 
 const Orders = () => {
