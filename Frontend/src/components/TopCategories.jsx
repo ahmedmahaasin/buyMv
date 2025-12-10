@@ -92,7 +92,7 @@ const TopCategories = () => {
       {/* View More Button */}
       <AnimatedSection className="flex justify-center mt-12">
         <Link
-          to="/Categoires"
+          to="/categories"
           className="px-8 py-3 rounded-full bg-gradient-to-r from-red-600 to-yellow-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
         >
           View All Categories
