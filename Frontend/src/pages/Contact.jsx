@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Title from '../components/title';
+import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import SocialMedia from '../components/SocialMedia';
 import NewsLetter from '../components/NewsLetter';
