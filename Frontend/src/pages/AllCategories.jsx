@@ -3,7 +3,6 @@ import { ShopConstext } from "../context/ShopContext";
 import Title from "../components/Title";
 import NewsLetter from "../components/NewsLetter";
 
-
 // Animated Section for scroll animations
 const AnimatedSection = ({ children, className = "", delay = 0 }) => {
   const ref = React.useRef();
@@ -43,16 +42,19 @@ const AllCategories = () => {
 
   return (
     <div className="my-20 px-4 sm:px-8 lg:px-12">
-      <Title text1="ALL" text2="CATEGORIES" align="center" />
-      <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 mb-10 text-center">
-        Browse through all available categories and subcategories for a seamless shopping experience.
-      </p>
+      {/* Title */}
+      <div className="text-center mb-14">
+        <Title text1="ALL" text2="CATEGORIES" />
+        <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600">
+          Browse through all available categories and subcategories for a seamless shopping experience.
+        </p>
+      </div>
 
-      {/* Grid layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center">
+      {/* Category Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 justify-items-center">
         {items.map((item, index) => (
-          <AnimatedSection key={item.id} delay={index * 0.1}>
-            <div className="flex flex-col items-center cursor-pointer">
+          <AnimatedSection key={item.id} delay={index * 0.1} className="group flex justify-center">
+            <div className="flex flex-col items-center text-center">
               <button
                 onClick={() => {
                   if (item.type === "category") {
@@ -62,25 +64,26 @@ const AllCategories = () => {
                   }
                 }}
               >
-                <div className="w-32 h-32 border rounded-2xl shadow-md overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300 bg-white">
+                <div className="relative w-32 h-32 border rounded-2xl shadow-md overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300 bg-white">
                   <img
-                    src={item.cat_image[0]}
+                    src={item.cat_image}
                     alt={item.cat_name}
-                    className="object-contain w-full h-full p-4 hover:p-2 transition-all"
+                    className="object-contain w-full h-full p-4 group-hover:p-2 transition-all"
                   />
                 </div>
               </button>
-              <p className="pt-3 font-bold text-center">{item.cat_name}</p>
+              <p className="pt-3 font-bold">{item.cat_name}</p>
             </div>
           </AnimatedSection>
         ))}
       </div>
-      <div className=" mt-28"> 
+
+      {/* Newsletter Section */}
+      <div className="mt-28">
         <AnimatedSection>
-     <NewsLetter />
-    </AnimatedSection>
-    </div>
-     
+          <NewsLetter />
+        </AnimatedSection>
+      </div>
     </div>
   );
 };
